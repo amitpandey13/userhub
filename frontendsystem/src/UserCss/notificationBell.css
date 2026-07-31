@@ -1,0 +1,89 @@
+.notification-bell{
+    position: relative;
+    display: inline-block;
+}
+
+.bell-btn{
+    width:56px;
+    height:56px;
+    border:none;
+    border-radius:50%;
+    background:#ffffff;
+    color:#374151;
+    font-size:24px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    position:relative;
+    box-shadow:0 6px 18px rgba(0,0,0,.18);
+    transition:.3s;
+}
+
+.bell-btn:hover{
+    transform:translateY(-2px);
+    background:#2563eb;
+    color:white;
+}
+
+.notification-count{
+    position:absolute;
+    top:2px;
+    right:2px;
+
+    width:22px;
+    height:22px;
+
+    border-radius:50%;
+
+    background:#ef4444;
+    color:white;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:11px;
+    font-weight:700;
+
+    border:2px solid white;
+}
+
+.notification-dropdown{
+    position:absolute;
+    top:60px;
+    right:0;
+    width:380px;
+    background:white;
+    border-radius:14px;
+    box-shadow:0 12px 30px rgba(0,0,0,.15);
+    overflow:hidden;
+    z-index:999;
+    animation:dropdown .25s ease;
+}
+
+@keyframes dropdown{
+
+    from{
+        opacity:0;
+        transform:translateY(-10px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@media(max-width:768px){
+
+    .notification-dropdown{
+
+        width:320px;
+
+        right:-10px;
+
+    }
+
+}

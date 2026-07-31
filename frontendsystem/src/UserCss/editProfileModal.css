@@ -1,0 +1,273 @@
+/* ================= Overlay ================= */
+
+.modal-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    backdrop-filter:blur(4px);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    animation:fadeIn .25s ease;
+}
+
+/* ================= Modal ================= */
+
+.edit-profile-modal{
+
+    width:800px;
+    max-width:95%;
+
+    max-height:90vh;
+
+    overflow-y:auto;
+
+    background:#fff;
+
+    border-radius:18px;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.25);
+
+    animation:slideUp .3s ease;
+
+    padding:30px;
+}
+
+.edit-profile-modal::-webkit-scrollbar{
+    width:8px;
+}
+
+.edit-profile-modal::-webkit-scrollbar-thumb{
+    background:#d1d5db;
+    border-radius:20px;
+}
+
+/* ================= Heading ================= */
+
+.edit-profile-modal h2{
+    text-align:center;
+    margin-bottom:25px;
+    color:#1f2937;
+}
+
+/* ================= Form ================= */
+
+.edit-profile-modal form{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+/* ================= Inputs ================= */
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+}
+
+.form-group label{
+    margin-bottom:8px;
+    font-weight:600;
+    color:#374151;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+
+    width:100%;
+
+    padding:12px 15px;
+
+    border:1px solid #d1d5db;
+
+    border-radius:10px;
+
+    background:#f8fafc;
+
+    color:#111827;
+
+    outline:none;
+
+    font-size:15px;
+
+    transition:.25s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+
+    border-color:#4f46e5;
+
+    background:white;
+
+    box-shadow:0 0 0 4px rgba(79,70,229,.12);
+
+}
+
+.form-group textarea{
+
+    resize:vertical;
+
+    min-height:100px;
+
+}
+
+/* ================= Two Column ================= */
+
+.two-column{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:20px;
+
+}
+
+/* ================= Footer ================= */
+
+.modal-buttons{
+
+    position:sticky;
+
+    bottom:0;
+
+    background:white;
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:15px;
+
+    padding-top:20px;
+
+    margin-top:25px;
+
+    border-top:1px solid #e5e7eb;
+
+}
+
+/* ================= Buttons ================= */
+
+.cancel-btn,
+.save-btn{
+
+    min-width:140px;
+
+    height:48px;
+
+    border:none;
+
+    border-radius:10px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+.cancel-btn{
+
+    background:#e5e7eb;
+
+    color:#374151;
+
+}
+
+.cancel-btn:hover{
+
+    background:#d1d5db;
+
+}
+
+.save-btn{
+
+    background:#4f46e5;
+
+    color:white;
+
+}
+
+.save-btn:hover:not(:disabled){
+
+    background:#4338ca;
+
+    transform:translateY(-2px);
+
+}
+
+.save-btn:disabled{
+
+    background:#9ca3af;
+
+    cursor:not-allowed;
+
+}
+
+/* ================= Animations ================= */
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
+
+@keyframes slideUp{
+
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* ================= Mobile ================= */
+
+@media(max-width:768px){
+
+    .edit-profile-modal{
+
+        width:95%;
+
+        padding:20px;
+
+    }
+
+    .two-column{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .modal-buttons{
+
+        flex-direction:column;
+
+    }
+
+    .cancel-btn,
+    .save-btn{
+
+        width:100%;
+
+    }
+
+}

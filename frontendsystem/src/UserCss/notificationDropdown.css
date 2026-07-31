@@ -1,0 +1,71 @@
+.notification-dropdown{
+    position:absolute;
+    top:60px;
+    right:0;
+    width:380px;
+    background:#fff;
+    border-radius:14px;
+    box-shadow:0 12px 30px rgba(0,0,0,.15);
+    overflow:hidden;
+    z-index:999;
+}
+
+.notification-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 20px;
+    border-bottom:1px solid #ececec;
+}
+
+.notification-header h3{
+    font-size:17px;
+    color:#1f2937;
+}
+
+.mark-all-btn{
+    border:none;
+    background:none;
+    color:#2563eb;
+    cursor:pointer;
+    font-size:13px;
+    font-weight:600;
+}
+
+.mark-all-btn:hover{
+    text-decoration:underline;
+}
+
+.notification-list{
+    max-height:420px;
+    overflow-y:auto;
+}
+
+.notification-list::-webkit-scrollbar{
+    width:6px;
+}
+
+.notification-list::-webkit-scrollbar-thumb{
+    background:#d1d5db;
+    border-radius:20px;
+}
+
+.empty-notification{
+    padding:40px;
+    text-align:center;
+    color:#777;
+}
+
+.notification-footer{
+    text-align:center;
+    padding:15px;
+    border-top:1px solid #ececec;
+    font-weight:600;
+    color:#2563eb;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.notification-footer:hover{
+    background:#f8fafc;
+}

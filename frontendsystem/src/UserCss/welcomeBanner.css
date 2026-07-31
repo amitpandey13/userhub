@@ -1,0 +1,83 @@
+.welcome-banner {
+
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+
+    color: white;
+
+    border-radius: 18px;
+
+    padding: 30px 40px;
+
+    margin-bottom: 30px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    box-shadow: 0 10px 25px rgba(79, 70, 229, .25);
+
+}
+
+.welcome-text h1 {
+
+    margin: 0;
+
+    font-size: 32px;
+
+    font-weight: 700;
+
+}
+
+.user-name {
+
+    color: #ffd166;
+
+}
+
+.welcome-text p {
+
+    margin-top: 10px;
+
+    opacity: .9;
+
+    font-size: 16px;
+
+}
+
+.welcome-date {
+
+    text-align: right;
+
+}
+
+.welcome-date h3 {
+
+    margin: 0;
+
+    font-size: 18px;
+
+    font-weight: 500;
+
+}
+
+@media (max-width: 768px) {
+
+    .welcome-banner {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+
+    }
+
+    .welcome-date {
+
+        text-align: left;
+
+    }
+
+}

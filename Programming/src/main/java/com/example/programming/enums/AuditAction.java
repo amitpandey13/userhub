@@ -1,0 +1,35 @@
+package com.example.programming.enums;
+
+public enum AuditAction {
+
+    LOGIN,
+
+    LOGOUT,
+
+    USER_CREATED,
+
+    USER_UPDATED,
+
+    USER_DELETED,
+
+    USER_STATUS_CHANGED,
+
+    PROFILE_UPDATED,
+
+    PASSWORD_CHANGED,
+
+    PROFILE_PICTURE_UPDATED,
+
+    PROFILE_PICTURE_DELETED,
+
+    NOTIFICATION_SENT,
+
+    BROADCAST_NOTIFICATION,
+
+    EXPORT_CSV,
+
+    EXPORT_EXCEL,
+
+    EXPORT_PDF
+
+}

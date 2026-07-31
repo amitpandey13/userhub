@@ -1,0 +1,131 @@
+/* .user-dashboard{
+
+    padding:30px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+}
+
+.top-row{
+
+    display:grid;
+
+    grid-template-columns:340px 1fr;
+
+    gap:25px;
+
+}
+
+.stats-row{
+
+    width:100%;
+
+}
+
+.bottom-row{
+
+    width:100%;
+
+}
+
+@media(max-width:1000px){
+
+    .top-row{
+
+        grid-template-columns:1fr;
+
+    }
+
+} */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.user-layout{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    width:100%;
+
+    min-height:100vh;
+
+    background:#f5f7fb;
+
+}
+
+.user-dashboard{
+
+    flex:1;
+
+    padding:30px;
+
+    overflow-x:hidden;
+
+}
+
+.dashboard-content{
+
+    display:flex;
+
+    gap:25px;
+
+    align-items:flex-start;
+
+    margin:25px 0;
+
+}
+
+/* ===========================
+   Dashboard Stats
+=========================== */
+
+.dashboard-stats {
+
+    margin-top: 10px;
+
+}
+
+/* ===========================
+   Account Summary
+=========================== */
+
+.account-summary {
+
+    width: 100%;
+
+    margin-top: 10px;
+
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media (max-width: 1200px) {
+
+    .dashboard-content {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .user-dashboard {
+
+        padding: 20px;
+
+    }
+
+}

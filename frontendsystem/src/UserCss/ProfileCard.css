@@ -1,0 +1,105 @@
+.profile-card {
+
+    width: 340px;
+
+    background: white;
+
+    border-radius: 15px;
+
+    padding: 30px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,.08);
+
+    text-align: center;
+
+}
+
+.profile-image{
+
+    width:130px;
+
+    height:130px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    margin-bottom:20px;
+
+}
+
+.email{
+
+    color:gray;
+
+    margin-bottom:20px;
+
+}
+
+.badge-container{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:10px;
+
+    margin-bottom:25px;
+
+}
+
+.role-badge{
+
+    background:#4f46e5;
+
+    color:white;
+
+    padding:6px 14px;
+
+    border-radius:20px;
+
+    font-size:14px;
+
+}
+
+.status-active{
+
+    background:#16a34a;
+
+    color:white;
+
+    padding:6px 14px;
+
+    border-radius:20px;
+
+}
+
+.status-inactive{
+
+    background:#dc2626;
+
+    color:white;
+
+    padding:6px 14px;
+
+    border-radius:20px;
+
+}
+
+.profile-info{
+
+    margin-top:20px;
+
+}
+
+.info-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    padding:12px 0;
+
+    border-bottom:1px solid #eee;
+
+}

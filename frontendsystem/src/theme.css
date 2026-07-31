@@ -1,0 +1,53 @@
+:root {
+
+    /* Backgrounds */
+
+    --background: #f4f6f9;
+
+    --card-background: #ffffff;
+
+    --sidebar-background: #ffffff;
+
+    /* Text */
+
+    --text-color: #222;
+
+    --heading-color: #111827;
+
+    --secondary-text: #666;
+
+    /* Borders */
+
+    --border-color: #dddddd;
+
+    /* Hover */
+
+    --hover-color: #f1f5f9;
+
+    /* Shadow */
+
+    --shadow: 0 5px 15px rgba(0,0,0,.1);
+
+}
+
+.dark-theme {
+
+    --background: #121212;
+
+    --card-background: #1f2937;
+
+    --sidebar-background: #1e293b;
+
+    --text-color: #f8fafc;
+
+    --heading-color: white;
+
+    --secondary-text: #cbd5e1;
+
+    --border-color: #374151;
+
+    --hover-color: #334155;
+
+    --shadow: 0 8px 20px rgba(0,0,0,.4);
+
+}

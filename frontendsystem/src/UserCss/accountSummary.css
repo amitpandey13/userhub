@@ -1,0 +1,91 @@
+.account-summary{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:18px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+.account-summary h2{
+
+    margin-bottom:25px;
+
+    color:#1f2937;
+
+}
+
+.summary-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:20px;
+
+}
+
+.summary-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    padding:18px;
+
+    border-radius:14px;
+
+    background:#f8fafc;
+
+    transition:.3s;
+
+}
+
+.summary-item:hover{
+
+    background:#eef4ff;
+
+}
+
+.summary-icon{
+
+    font-size:28px;
+
+    color:#2563eb;
+
+}
+
+.summary-item span{
+
+    display:block;
+
+    color:#6b7280;
+
+    font-size:14px;
+
+    margin-bottom:4px;
+
+}
+
+.summary-item strong{
+
+    color:#111827;
+
+    font-size:16px;
+
+}
+
+@media(max-width:800px){
+
+    .summary-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
