@@ -23,6 +23,7 @@ import EditProfile from './user/EditProfile';
 import ChangePassword from './user/ChangePassword';
 import Profile from './user/Profile';
 import AuditLogs from "./admin/AuditLogs";
+import AddUser from './admin/AddUser'
 
 function App() {
   const { darkMode } = useTheme();
@@ -56,7 +57,7 @@ function App() {
         <Route path="/api/admin/getAllUsers" element={<UserList />} />
         <Route path="/admin/audit-logs" element={<AuditLogs />} />
 
-        <Route path="/admin/add-user" element={<UserForm />} />
+        <Route path="/admin/add-user" element={<AddUser />} />
 
     </Route>
 
@@ -98,30 +99,4 @@ function App() {
 
 export default App;
 
-// import logo from './logo.svg';
-// import './App.css';
-// import UserForm from './components/UserForm';
-// import UserList from './components/UserList';
-// import { Routes, Route } from "react-router-dom";
-// import Login from './components/Login';
-// import MainLayout from './components/MainLayout';
-// import ProtectedRoute from './components/ProtectedRoute'
 
-// function App() {
-//   return (
-
-//     // <div>
-//     //   <UserForm />
-
-//     // </div>
-
-//      <Routes>
-
-//       <Route path="/" element={<UserForm />} />
-//       <Route path="/login" element={<Login />} />
-//       <Route path="/api/admin/getAllUsers" element={<UserList />} />
-//     </Routes>
-//   );
-// }
-
-// export default App;

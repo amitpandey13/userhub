@@ -1,4 +1,4 @@
-const ADMIN_URL = "http://localhost:8080/api/admin";
+const ADMIN_URL = `${process.env.REACT_APP_API_BASE_URL}/api/admin`;
 
 export const getDashboard = async () => {
 

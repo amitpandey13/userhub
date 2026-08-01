@@ -4,10 +4,14 @@ import { getAllUsers, saveUser } from "../services/userservice";
 import UserList from '../admin/UserList';
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { addUserByAdmin } from "../services/userservice";
+ import { addUserByAdmin } from "../services/userservice";
 
 function UserForm() {
   const navigate = useNavigate();
+   const token = localStorage.getItem("token");
+
+  
+
   const [user, setUser] = useState({
     name: "",
     email: "",
@@ -61,12 +65,12 @@ function UserForm() {
 
     //saving user API
     try {
-      const response = await saveUser(user);
+      const response = await addUserByAdmin(user);
       toast.success("User Created Successfully!")
 
       setMessage("Customer created successfully!");
       // navigate("/users/getAllUsers");
-      navigate("/login")
+      navigate("/admin/dashboard")
       setUser({ name: "", email: "", password: "" });
     } catch (error) {
       console.log(error);
@@ -75,8 +79,8 @@ function UserForm() {
     }
   };
 
-   
-
+    
+  
   return (
     <>
        <main className="page">
@@ -85,7 +89,7 @@ function UserForm() {
           <h1>Create Account</h1>
           <p className="subtitle">Enter your details to get started.</p>
 
-          <form onSubmit={handleSubmit} autoComplete="off">
+          <form onSubmit= {handleSubmit} autoComplete="off">
             <label htmlFor="name">Full name</label>
             <input
               id="name"
@@ -122,10 +126,7 @@ function UserForm() {
               minLength="6"
               required
             />
-           <button type="submit" onClick={loginHandler}>
-              LogIn
-            </button>
-         
+           
             <button type="submit">Create Account</button>
            
           </form>

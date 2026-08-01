@@ -1,5 +1,5 @@
-const BASE_URL = "http://localhost:8080/api/users";
-const ADMIN_URL = "http://localhost:8080/api/admin";
+const BASE_URL = `${process.env.REACT_APP_API_BASE_URL}/api/users`;
+const ADMIN_URL = `${process.env.REACT_APP_API_BASE_URL}/api/admin`;
 
 export const saveUser = async (user) => {
   const response = await fetch(`${BASE_URL}/savedUser`, {
@@ -20,7 +20,7 @@ export const saveUser = async (user) => {
 export const addUserByAdmin = async (user) => {
   const token = localStorage.getItem("token");
 
-  const response = await fetch(`${BASE_URL}/savedUser`, {
+  const response = await fetch(`${ADMIN_URL}/savedUserByAdmin`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -35,6 +35,7 @@ export const addUserByAdmin = async (user) => {
 
   return response.json();
 };
+
 
 // export const getAllUsers = async (page, size) => {
   
@@ -52,7 +53,7 @@ export const getAllUsers = async (page, size, status) => {
 
     const token = localStorage.getItem("token");
 
-    // const ADMIN_URL = "http://localhost:8080/api/admin";
+    
 
     let url = `${ADMIN_URL}/getAllUsers?page=${page}&size=${size}`;
 
@@ -126,10 +127,7 @@ export const updateUser = async (userId, user) => {
 };
 
 export const loggedInUserFunction = async (loggedInUser) => {
-
-  //const token = localStorage.getItem("token");
-  console.log("****************")
- // console.log(token);
+  console.log(process.env.REACT_APP_API_BASE_URL);
   const response = await fetch(`${BASE_URL}/login`, {
     method: "POST",
     headers: {
@@ -213,7 +211,7 @@ export const importExcel = async (file) => {
     formData.append("file", file);
 
     const response = await fetch(
-        "http://localhost:8080/api/admin/import",
+        `${BASE_URL}/import`,
         {
             method: "POST",
             headers: {
@@ -259,7 +257,7 @@ export const updateCurrentUser = async (user) => {
     const token = localStorage.getItem("token");
 
     const response = await fetch(
-        "http://localhost:8080/api/users/profile",
+        `${BASE_URL}/profile`,
         {
             method: "PUT",
 
@@ -286,7 +284,7 @@ export const changePassword = async (passwordData) => {
     const token = localStorage.getItem("token");
 
     const response = await fetch(
-        "http://localhost:8080/api/users/change-password",
+        `${BASE_URL}/change-password`,
         {
             method: "PUT",
 
@@ -318,7 +316,7 @@ export const uploadProfilePicture = async (file) => {
     formData.append("file", file);
 
     const response = await fetch(
-        "http://localhost:8080/api/users/profile-picture",
+        `${BASE_URL}/profile-picture`,
         {
             method: "POST",
 
@@ -346,7 +344,7 @@ export const uploadProfilePicture = async (file) => {
 export const deleteProfilePicture = async () => {
 
     const response = await fetch(
-        "http://localhost:8080/api/users/profile-picture",
+        `${BASE_URL}/profile-picture`,
         {
             method: "DELETE",
 
@@ -374,7 +372,7 @@ export const getNotifications = async () => {
     const token = localStorage.getItem("token");
 
     const response = await fetch(
-        "http://localhost:8080/api/users/notifications",
+        `${BASE_URL}/notifications`,
         {
             method: "GET",
             headers: {
@@ -395,7 +393,7 @@ export const markNotificationAsRead = async (id) => {
     const token = localStorage.getItem("token");
 
     const response = await fetch(
-        `http://localhost:8080/api/users/notifications/${id}/read`,
+        `${BASE_URL}/notifications/${id}/read`,
         {
             method: "PUT",
             headers: {
@@ -416,7 +414,7 @@ export const markAllNotificationsRead = async () => {
     const token = localStorage.getItem("token");
 
     const response = await fetch(
-        "http://localhost:8080/api/users/notifications/read-all",
+        `${BASE_URL}/notifications/read-all`,
         {
             method: "PUT",
             headers: {
@@ -435,7 +433,7 @@ export const deleteNotification = async (id) => {
     const token = localStorage.getItem("token");
 
     const response = await fetch(
-        `http://localhost:8080/api/users/notifications/${id}`,
+        `${BASE_URL}/notifications/${id}`,
         {
             method: "DELETE",
             headers: {
@@ -449,14 +447,14 @@ export const deleteNotification = async (id) => {
     }
 };
 
-const API_URL = "http://localhost:8080/api/admin";
+
 
 export const sendNotification = async (request) => {
 
     const token = localStorage.getItem("token");
 
     const response = await fetch(
-        `${API_URL}/notifications`,
+        `${ADMIN_URL}/notifications`,
         {
             method: "POST",
             headers: {
@@ -484,7 +482,7 @@ export const broadcastNotification = async (request) => {
     const token = localStorage.getItem("token");
 
     const response = await fetch(
-        `${API_URL}/notifications/broadcast`,
+        `${ADMIN_URL}/notifications/broadcast`,
         {
             method: "POST",
             headers: {

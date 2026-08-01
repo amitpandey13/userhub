@@ -1,12 +1,12 @@
 
-const API_URL = "http://localhost:8080/api/admin";
+const ADMIN_URL = `${process.env.REACT_APP_API_BASE_URL}/api/admin`;
 export const getAuditLogs = async (page = 0, size = 10) => {
 
     try {
 
         const response = await fetch(
 
-            `${API_URL}/audit-logs?page=${page}&size=${size}`,
+            `${ADMIN_URL}/audit-logs?page=${page}&size=${size}`,
 
             {
                 method: "GET",
@@ -51,7 +51,7 @@ export const searchAuditLogs = async (
 
     const token = localStorage.getItem("token");
 
-    let url = `${API_URL}/audit-logs/search?page=${page}&size=${size}`;
+    let url = `${ADMIN_URL}/audit-logs/search?page=${page}&size=${size}`;
 
     if (search) {
 

@@ -1,6 +1,7 @@
 import { useRef, useState ,useEffect} from "react";
 import "../UserCss/profilePictureUpload.css";
 import { FaUser, FaTrash } from "react-icons/fa";
+import {API_BASE_URL} from '../Config'
 
 function ProfilePictureUpload({ imageUrl, onUpload, onDelete }) {
   const fileInputRef = useRef(null);
@@ -42,7 +43,7 @@ function ProfilePictureUpload({ imageUrl, onUpload, onDelete }) {
             src={
               preview.startsWith("blob:")
                 ? preview
-                : `http://localhost:8080${preview}`
+                : `${API_BASE_URL}${preview}`
             }
             alt="Profile"
             className="profile-picture"

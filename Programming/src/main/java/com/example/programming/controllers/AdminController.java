@@ -12,6 +12,7 @@ import com.example.programming.serviceImplementation.PdfExportServiceImplementat
 import com.example.programming.services.*;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.data.domain.Page;
@@ -71,6 +72,10 @@ public class AdminController {
 
     }
 
+    @PostMapping("/savedUserByAdmin")
+    public ResponseEntity<User> createUser(@Valid @RequestBody User user) {
+        return ResponseEntity.ok(userService.createUser(user));
+    }
     @GetMapping("/getAllUsers")
     public Page<User> getAllUsers(
             @RequestParam(defaultValue = "0") int page,
