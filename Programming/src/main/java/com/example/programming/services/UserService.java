@@ -16,6 +16,8 @@ import java.util.List;
 public interface UserService {
 
     User createUser(User user);
+
+    User createUserByAdmin(User user);
 //    List<User> getAllUsers();
 
     boolean emailExists(String email);

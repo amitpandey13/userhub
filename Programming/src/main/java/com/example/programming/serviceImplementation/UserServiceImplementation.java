@@ -116,9 +116,47 @@ public class UserServiceImplementation implements UserService {
         logger.info("User created successfully. Id: {}, Email: {}",
                 savedUser.getUserId(),
                 savedUser.getEmail());
+
+        return savedUser;
+    }
+
+    //user created by admin
+    public User createUserByAdmin(User user) {
+
+        logger.info("Creating user with email: {}", user.getEmail());
+
+        if (userRepo.findByEmail(user.getEmail()).isPresent()) {
+
+            logger.warn("Duplicate email registration attempt: {}", user.getEmail());
+
+            throw new DuplicateEmailException("Email already exists");
+        }
+
+        Role userRole = roleRepository.findByName(RoleName.ROLE_USER)
+                .orElseThrow(() -> {
+
+                    logger.error("Default ROLE_USER not found in database.");
+
+                    return new DefaultRoleNotFoundException("Default role not found");
+
+                });
+
+        String encodedPassword = passwordEncoder.encode(user.getPassword());
+
+        user.setPassword(encodedPassword);
+        user.setRole(userRole);
+        user.setStatus(UserStatus.ACTIVE);
+
+        User savedUser = userRepo.save(user);
+
+
+
+        logger.info("User created successfully. Id: {}, Email: {}",
+                savedUser.getUserId(),
+                savedUser.getEmail());
 //        audit log implementation
 
-                auditLogService.log(
+        auditLogService.log(
 
                 securityUtil.getCurrentUser(),      // Who performed the action (Admin)
 

@@ -74,7 +74,7 @@ public class AdminController {
 
     @PostMapping("/savedUserByAdmin")
     public ResponseEntity<User> createUser(@Valid @RequestBody User user) {
-        return ResponseEntity.ok(userService.createUser(user));
+        return ResponseEntity.ok(userService.createUserByAdmin(user));
     }
     @GetMapping("/getAllUsers")
     public Page<User> getAllUsers(
