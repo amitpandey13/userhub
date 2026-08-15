@@ -15,7 +15,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: backend
+        working-directory: Programming
 
     steps:
 
@@ -28,6 +28,7 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: maven
+          cache-dependency-path: Programming/pom.xml
 
       - name: Give Maven wrapper permission
         run: chmod +x mvnw
