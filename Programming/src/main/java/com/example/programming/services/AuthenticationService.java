@@ -16,6 +16,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 
 
 @Service
@@ -66,7 +67,9 @@ public class AuthenticationService {
 // Load your User entity
         User user = userRepository.findByEmail(request.getEmail())
                 .orElseThrow();
-
+        // Update last login
+        user.setLastLogin(LocalDateTime.now());
+        userRepository.save(user);
         return new LoginResponse(
                 token,
                 user.getEmail(),

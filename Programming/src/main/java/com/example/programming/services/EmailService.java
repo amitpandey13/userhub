@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.MailException;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -50,6 +51,42 @@ public class EmailService {
             logger.error(
                     "Failed to send OTP email to {}",
                     toEmail,
+                    e
+            );
+
+            throw e;
+        }
+    }
+
+    @Async
+    public void sendInactiveUserEmail(String email, String name) {
+
+        logger.info("Preparing Inactive User email for {}", email);
+
+        try {
+
+            SimpleMailMessage message = new SimpleMailMessage();
+
+            message.setTo(email);
+
+            message.setSubject("We miss you!");
+
+            message.setText(
+                    "Hi " + name + ",\n\n" +
+                            "We haven't seen you on UserHub for a while. " +
+                            "Come back and check out what's new!\n\n" +
+                            "UserHub"
+            );
+
+            mailSender.send(message);
+
+            logger.info("User Inactive email sent successfully to {}", email);
+
+        } catch (MailException e) {
+
+            logger.error(
+                    "Failed to send OTP email to {}",
+                    email,
                     e
             );
 
