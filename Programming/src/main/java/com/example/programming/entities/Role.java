@@ -22,4 +22,5 @@ public class Role {
 
 
     // getters & setters
+    //Role Entity
 }
