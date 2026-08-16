@@ -19,6 +19,8 @@ public interface UserRepo extends JpaRepository<User, Integer> {
     @Override
     Optional<User> findById(Integer integer);
 
+    List<User> findByLastLoginBefore(LocalDateTime dateTime);
+
     @Override
     List<User> findAll();
 
